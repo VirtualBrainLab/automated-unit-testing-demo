@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "demo"
+version = "1.0.0"
+
+[project.scripts]
+demo = "demo.__main__:main"
