@@ -28,12 +28,16 @@ class TestDemoClass(TestCase):
         self.assertEqual(self.demo.vector_sum((2, 2, 2), (0, 0, 0)), (2, 2, 2))
         self.assertEqual(self.demo.vector_sum((1, 2, 3), (4, 5, 6)), (5, 7, 9))
 
+        self.assertRaises(TypeError, self.demo.vector_sum, ("hi", "this", "is"), ("a", "test", "case"))
+
     def test_scale_vector(self):
         """Test scale_vector function"""
         self.assertEqual(self.demo.scale_vector(2, (2, 2, 2)), (4, 4, 4))
         self.assertEqual(self.demo.scale_vector(0, (2, 2, 2)), (0, 0, 0))
         self.assertEqual(self.demo.scale_vector(1, (2, 2, 2)), (2, 2, 2))
         self.assertEqual(self.demo.scale_vector(2, (1, 2, 3)), (2, 4, 6))
+
+        self.assertRaises(TypeError, self.demo.scale_vector, ("hi", "this", "is"), ("a", "test", "case"))
 
     def test_sum_and_callback(self):
         """Test sum_and_callback function"""
