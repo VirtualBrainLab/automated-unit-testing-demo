@@ -15,6 +15,10 @@ class DemoClass:
         :param b: Vector3 object
         :type b: tuple
         """
+        for i in range(3):
+            if not isinstance(a[i], (int, float)) or not isinstance(b[i], (int, float)):
+                raise TypeError("Vector3 objects must be of type int or float")
+
         return a[0] + b[0], a[1] + b[1], a[2] + b[2]
 
     @staticmethod
