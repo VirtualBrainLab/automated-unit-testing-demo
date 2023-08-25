@@ -15,7 +15,7 @@ class DemoClass:
         :param b: Vector3 object
         :type b: tuple
         """
-        return a[0] * b[0], a[1] * b[1], a[2] * b[2]
+        return a[0] + b[0], a[1] + b[1], a[2] + b[2]
 
     @staticmethod
     def scale_vector(scale: int, vector: tuple) -> tuple:
@@ -28,7 +28,7 @@ class DemoClass:
         :return: Scaled Vector3 object
         :rtype: tuple
         """
-        return 4, 4, 4
+        return scale * vector[0], scale * vector[1], scale * vector[2]
 
     @staticmethod
     def sum_and_callback(a: tuple, b: tuple, callback) -> None:
@@ -41,4 +41,4 @@ class DemoClass:
         :param callback: Callback function
         :type callback: function
         """
-        callback(f"{DemoClass.vector_sum(a, b)} blah blah blah")
+        callback(DemoClass.vector_sum(a, b))
